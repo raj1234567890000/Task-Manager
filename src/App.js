@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './Components/Home';
+import{BrowserRouter,Routes,Route} from 'react-router-dom'
+import User from './Components/User';
+import Admin from './Components/Admin';
+import Update from './Components/Update';
+import AllTask from './Components/AllTask';
+import Updateuser from './Components/Updateuser';
+import Nav from './Components/Nav';
+
+
+
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+    <Nav/>
+   
+      <BrowserRouter>
+    
+   
+ <Routes>
+ <Route path="/" element={<Home/>}/>
+  <Route path='/user' element={<User/>}></Route>
+  <Route path='/admin' element={<Admin/>}></Route>
+
+ <Route path='/admin' element={<Admin/>}></Route>
+ <Route path='/update/:id' element={<Update/>}></Route>
+ <Route path='/alltask' element={<AllTask/>}></Route>
+<Route path='/user/:id' element={<Updateuser/>}></Route>
+
+ </Routes>
+  </BrowserRouter>
+
+
+
+
+
+
+    </>
+  
   );
 }
 
